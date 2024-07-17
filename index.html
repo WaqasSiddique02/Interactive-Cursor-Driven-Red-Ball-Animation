@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Cursor</title>
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    <style>
+
+        body{
+            background-color: yellow;
+        }
+
+        #ball {
+            background-color: red;
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: solid black;
+        }
+        h1{
+            text-align: center;
+            font-family: cursive;
+            margin-top: 40vh;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id="head">Moving Ball</h1>
+    <div id="ball"></div>
+    <script>
+        document.addEventListener("mousemove", function(event) {
+            var x=event.clientX; 
+            var y =event.clientY; 
+            
+            document.getElementById("ball").style.left = x + "px";
+            document.getElementById("ball").style.top = y + "px";
+        });
+        
+        // document.addEventListener("scroll", function(event) {
+        //     document.getElementById("head").innerHTML="You scrolled";
+        //     var y = window.scrollY; 
+        //     console.log("Y:"+y);
+            
+        //     document.getElementById("ball").style.left = y + "px";
+        //     document.getElementById("ball").style.top = y + "px";
+        // });
+        
+        //  document.addEventListener("wheel", function(event) {
+        //     var y =event.deltaY; 
+        //     console.log(y)
+            
+        //     let currentposition=parseInt(document.getElementById("ball").style.top)||0;
+        //     document.getElementById("ball").style.top = (y+currentposition) + "px";
+        // });
+
+    </script>
+</body>
+</html>
